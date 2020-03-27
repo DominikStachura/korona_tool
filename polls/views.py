@@ -33,8 +33,11 @@ def question_view(request, pk=None):
             value = request.POST.get('value')
             question.numerical_value = value
             question.save()
-            next_question_id = question.next_question.id
-            return HttpResponseRedirect(reverse('polls:question-detail', args=(next_question_id,)))
+            if question.next_question is None:
+                return HttpResponseRedirect(reverse('polls:final'))
+            else:
+                next_question_id = question.next_question.id
+                return HttpResponseRedirect(reverse('polls:question-detail', args=(next_question_id,)))
         else:
             selected_choice = question.choice_set.get(pk=request.POST.get('choice'))
             if not(selected_choice.final):
