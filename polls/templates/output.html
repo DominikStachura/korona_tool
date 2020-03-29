@@ -1,0 +1,9 @@
+Podaj kod, do którego przypisana jest historia odpowiedzi
+
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="code" min="0" max="99999">
+    <input type="submit" value="Login">
+</form>
+
+{{ message }}

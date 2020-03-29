@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Choice, ChoiceOrder, Question
+from .models import Choice, ChoiceOrder, Question, History
 
 
 class ChoiceInline(admin.TabularInline):
@@ -36,6 +36,12 @@ class ChoiceAdmin(admin.ModelAdmin):
     class Meta:
         model = Choice
 
+class HistoryAdmin(admin.ModelAdmin):
+    list_display = ['__str__']
+    class Meta:
+        model = History
+
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice, ChoiceAdmin)
+admin.site.register(History, HistoryAdmin)

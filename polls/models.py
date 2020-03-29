@@ -6,6 +6,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Question(models.Model):
@@ -31,3 +32,13 @@ class ChoiceOrder(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
     # zrobic string pytan i string odpowiedzi i na koniec je rozdzielac do tablicy i do csv
+
+class History(models.Model):
+    questions_all = models.CharField(max_length=10000, null=True, blank=True)
+    answers_all = models.CharField(max_length=10000, null=True, blank=True)
+
+    code = models.CharField(max_length=8)
+    assigned_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.code
