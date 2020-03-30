@@ -1,0 +1,9 @@
+{{ code }}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="password" min="0" max="99999">
+    <input type="submit" value="Login">
+</form>
+
+{{ message }}
