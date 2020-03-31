@@ -27,8 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+STATIC_URL = '/static/'
 # Application definition
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")  #to sa statyczne dla projektu, lokalne chyba pliki
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -117,5 +121,3 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATIC_URL = '/static/'
