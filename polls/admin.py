@@ -37,7 +37,7 @@ class ChoiceAdmin(admin.ModelAdmin):
         model = Choice
 
 class HistoryAdmin(admin.ModelAdmin):
-    list_display = ['__str__']
+    list_display = ['__str__', 'pub_date']
     class Meta:
         model = History
 

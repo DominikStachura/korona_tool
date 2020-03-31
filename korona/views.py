@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from .utils import unique_code_generator
 from polls.models import History
 
+
 def home_view(request):
     # user = User(username='user', password='1234')
     # user.save()
@@ -13,24 +14,33 @@ def home_view(request):
 
     # print(request.user.is_authenticated)
     logout(request)
-    code = unique_code_generator()
-    context = {'code': code}
-    history = History(code=code)
-    history.save()
-
+    # code = unique_code_generator()
+    # context = {'code': code}
+    # history = History(code=code)
+    # history.save()
+    context = {}
     if request.method == 'POST':
-        password = request.POST.get('password')
-        history = History.objects.all().filter(code=password)
-        if history.exists():
-            user = User(username=password, password=password)
-            user.save()
-            login(request, user)
-            instance = history.first()
-            instance.assigned_user = user
-            instance.save()
-            return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+        if 'password' in request.POST:
+            password = request.POST.get('password')
+            user = User.objects.all().filter(username=request.POST.get('password'))
+            if user.exists():
+                user = user.first()
+                login(request, user)
+                history = History(code=password)
+                history.assigned_user = user
+                history.save()
+                return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+            else:
+                context['message'] = 'Brak danych przypisanych do kodu'
         else:
-            context['message'] = 'Kody nie są identyczne'
+            code = unique_code_generator()
+            user = User(username=code, password=code)
+            user.save()
+            history = History(code=code)
+            history.assigned_user = user
+            history.save()
+            login(request, user)
+            return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
     return render(request, 'home.html', context=context)
 
 

@@ -110,10 +110,14 @@
                             o nasze zdrowie</h1>
                             <p>Wspólnie z użytkownikami chcemy zbierać dane dotyczące objawów, przebiegu oraz powikłań zarażenia wirusem COVID-19, aby dostarczyć dane dla lekarzy, koncernów opracowujących szczepionkę, ale przede wszystkim dla użytkowników, którzy będą mogli śledzić swój stan zdrowia i wcześniej identyfikować potencjalne zakażenie.
  </p>
-                            <h2>Wygenerowany numer:</h2>
+{#                            <h2>Wygenerowany numer:</h2>#}
                             <p> <font size="6">{{ code }}</font> </p>
+                            <form method="post">
+                                {% csrf_token %}
+                                <input class="btn_2" type="submit" value="Biore udzial" />
+{#                                <a href="#" class="btn_2">Biorę Udział</a>#}
+                            </form>
 
-                            <a href="#" class="btn_2">Biorę Udział</a>
                             <div class="banner_item">
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_1.svg'%} " alt="">

@@ -4,15 +4,15 @@
     <list default="true" id="bd8368ce-48e5-4e28-b479-056d909345f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/korona/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/korona/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/korona/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/korona/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/korona/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/korona/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/question_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templates/final.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/final.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GREMLIN" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tool" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -66,19 +66,51 @@
       <recent name="C:\Python_files\programy\repos\korona" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.korona">
+    <configuration name="scratch_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="korona" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="korona" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="korona" type="Python.DjangoServer" factoryName="Django server">
       <module name="korona" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,9 +119,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="korona.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\qjsjnz\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -103,6 +135,24 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.scratch_5" />
+        <item itemvalue="Python.scratch_4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -143,76 +193,100 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585254564631" />
-    <state x="-865" y="181" width="783" height="592" key="#xdebugger.evaluate" timestamp="1585491417230">
+    <state x="679" y="140" key="#korona" timestamp="1585644033886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="679" y="140" key="#korona/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585644033886" />
+    <state x="679" y="140" key="#korona/0.0.1920.1040@0.0.1920.1040" timestamp="1585643915379" />
+    <state x="-1409" y="331" width="1289" height="650" key="#xdebugger.evaluate" timestamp="1585656511253">
       <screen x="-1680" y="8" width="1680" height="1010" />
     </state>
-    <state x="-865" y="181" width="783" height="592" key="#xdebugger.evaluate/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491417230" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1585478750095">
+    <state x="-1409" y="331" width="1289" height="650" key="#xdebugger.evaluate/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656511253" />
+    <state x="694" y="283" width="843" height="676" key="EnvironmentVariablesDialog" timestamp="1585644027861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585478750095" />
-    <state width="1877" height="208" key="GridCell.Tab.0.bottom" timestamp="1585491420320">
+    <state x="694" y="283" width="843" height="676" key="EnvironmentVariablesDialog/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585644027861" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1585650267839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.0.center" timestamp="1585491420320">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585650267839" />
+    <state width="1877" height="221" key="GridCell.Tab.0.bottom" timestamp="1585663782406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.center/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.0.left" timestamp="1585491420320">
+    <state width="1877" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585663782406" />
+    <state width="1877" height="221" key="GridCell.Tab.0.center" timestamp="1585663782406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.left/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.0.right" timestamp="1585491420320">
+    <state width="1877" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585663782406" />
+    <state width="1877" height="221" key="GridCell.Tab.0.left" timestamp="1585663782406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.1.bottom" timestamp="1585491420320">
+    <state width="1877" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585663782406" />
+    <state width="1877" height="221" key="GridCell.Tab.0.right" timestamp="1585663782406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.1.center" timestamp="1585491420320">
+    <state width="1877" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585663782406" />
+    <state width="1877" height="189" key="GridCell.Tab.1.bottom" timestamp="1585656512248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.1.center/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.1.left" timestamp="1585491420320">
+    <state width="1877" height="189" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656512248" />
+    <state width="1877" height="189" key="GridCell.Tab.1.center" timestamp="1585656512248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.1.left/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
-    <state width="1877" height="208" key="GridCell.Tab.1.right" timestamp="1585491420320">
+    <state width="1877" height="189" key="GridCell.Tab.1.center/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656512248" />
+    <state width="1877" height="189" key="GridCell.Tab.1.left" timestamp="1585656512248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="208" key="GridCell.Tab.1.right/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585491420320" />
+    <state width="1877" height="189" key="GridCell.Tab.1.left/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656512248" />
+    <state width="1877" height="189" key="GridCell.Tab.1.right" timestamp="1585656512248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="189" key="GridCell.Tab.1.right/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656512248" />
+    <state x="672" y="237" key="MultipleFileMergeDialog" timestamp="1585643406090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="237" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585643406090" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1585644086008">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585644086008" />
+    <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1585656569719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585656569719" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585663177393">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1680.8.1680.1010@0.0.1920.1040" timestamp="1585663177393" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/korona/views.py</url>
-          <line>45</line>
+          <line>55</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/polls/views.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/polls/views.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/polls/views.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/polls/views.py</url>
-          <line>78</line>
+          <line>84</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/polls/views.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/polls/views.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/korona$scratch_4.coverage" NAME="scratch_4 Coverage Results" MODIFIED="1585663202193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/korona$scratch_5.coverage" NAME="scratch_5 Coverage Results" MODIFIED="1585663782401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>

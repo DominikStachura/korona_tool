@@ -40,5 +40,7 @@ class History(models.Model):
     code = models.CharField(max_length=8)
     assigned_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
+    pub_date = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.code
