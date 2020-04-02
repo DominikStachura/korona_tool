@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>medical</title>
+    <title>Dziennik COVID-19</title>
     <link rel="icon" href="{% static "img/favicon.png"%}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
@@ -79,9 +79,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Kontakt</a>
                                 </li>
-                                <li class="d-none d-lg-block">
-                                    <a class="btn_1" href="#">Dowiedz się więcej</a>
-                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -101,7 +98,8 @@
                             <h1>Dziękujemy</h1>
                             <p>
                                 Drogi użytkowniku, dziękujemy za podzielenie się z nami swoim stanem zdrowia.<br><br>
-                                <b>Zapisz swój kod</b>, będziemy mogli wtedy pokazać Ci historię Twojej choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej zrozumieniu.
+                                <p> <font size="6">{{ code }}</font> </p>
+                                <b><font size="4">Zapisz swój kod</font></b>, będziemy mogli wtedy pokazać Ci historię Twojej choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej zrozumieniu.
 <b>Pamiętaj, że całość procesu jest anonimowa a dane zbierane są w celach statystycznych!</b> Dlatego bez kodu historia Twojej choroby zacznie się od nowa.
                                 <br>
                                 <br>
@@ -110,7 +108,7 @@
 
                                 Zapraszamy do kontaktu, jednak pamiętajcie proszę, że nie jesteśmy lekarzami, staramy się tylko pomóc w zbieraniu danych. Aktualne informacje i zalecenia znajdziecie na  <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow">TUTAJ </a>
 Jeżeli macie pytania do działania strony, pomysły na jej rozwój lub chcecie się z nami skontaktować aby użyć danych prosimy o KONTAKT
-<h1>{{ code }}</h1>
+
  </p>
                             <a href={% url 'polls:output' %} class="btn_2">Pobierz swoje dane</a>
 

@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>medical</title>
+    <title>Dziennik COVID-19</title>
     <link rel="icon" href="{% static "img/favicon.png"%}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
@@ -85,6 +85,17 @@
 <form method="post">
     {% csrf_token %}
     <input type="number" name="password" min="0" max="99999">
+    <style>/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}</style>
     <input type="submit" value="Zaloguj">
 </form>
 
@@ -125,11 +136,11 @@
                                 </div>
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_2.svg'%}" alt="">
-                                    <h5>Przekażmy Naukowcą</h5>
+                                    <h5>Udostępniajmy</h5>
                                 </div>
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_3.svg'%}" alt="">
-                                    <h5>Pokonajmy Pandemie</h5>
+                                    <h5>Pokonajmy Pandemię</h5>
                                 </div>
                             </div>
                         </div>
