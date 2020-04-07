@@ -1,28 +1,12 @@
 from django.contrib.auth import logout
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic.detail import DetailView
-from korona.utils import get_download_path
-import csv
-import xlsxwriter
-
-from .models import Question, History
+from django.shortcuts import render
 from django.urls import reverse
 
+from korona.utils import create_spreadsheet_data
+from .models import Question, History
 
-# class QuestionDetailView(DetailView):
-#     model = Question
-#     template_name = 'question_detail.html'
-#
-#     def get_object(self, *args, **kwargs):
-#         request = self.request
-#         pk = self.kwargs.get('pk')
-#         instance = get_object_or_404(Question, pk=pk)
-#         print(len(list(instance.choice_set.all())))
-#
-#
-#
-#         return instance
 
 def question_view(request, pk=None):
     if not request.user.is_authenticated:
@@ -81,31 +65,13 @@ def output_view(request):
     context = {}
     if request.method == 'POST':
         code = request.POST.get('code')
-        history = History.objects.all().filter(code=code)
-        if history.exists():
-            download_path = get_download_path()
-            workbook = xlsxwriter.Workbook(f'{download_path}/output.xlsx')
-            for index, history_instance in enumerate(history):
-                # history_instance = history.first()
-                if history_instance.answers_all is not None:
-                    # file_name = f'output_{history_instance.pub_date.strftime("%Y%m%d-%H%M%S")}.csv'
-                    # with open(file_name, 'w') as f:
-                    #     writer = csv.writer(f)
-                    #     writer.writerows(
-                    #         zip(history_instance.questions_all.split('||')[1:], history_instance.answers_all.split('||')[1:]))
-                    row = 0
-                    col = 0
-                    worksheet = workbook.add_worksheet(f'{history_instance.pub_date.strftime("%Y%m%d-%H%M%S")}')
-                    for q, a in zip(history_instance.questions_all.split('||')[1:], history_instance.answers_all.split('||')[1:]):
-                        worksheet.write(row, col, q)
-                        worksheet.write(row, col + 1, a)
-                        row += 1
-            workbook.close()
+        data = create_spreadsheet_data(code=code)
 
-
-
-
-            context['message'] = "Zapisano dane to folderu 'pobrane' "
+        if data is not None:
+            response = HttpResponse(data,
+                                    content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            response['Content-Disposition'] = 'attachment; filename="output' + code + '.xlsx"'
+            return response
         else:
             context['message'] = 'Brak danych przypisanych do danego kodu'
     return render(request, 'output.html', context)
