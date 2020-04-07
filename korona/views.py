@@ -8,16 +8,7 @@ from polls.models import History
 
 
 def home_view(request):
-    # user = User(username='user', password='1234')
-    # user.save()
-    # print(User.objects.all().filter(password='1234').exists())
-
-    # print(request.user.is_authenticated)
     logout(request)
-    # code = unique_code_generator()
-    # context = {'code': code}
-    # history = History(code=code)
-    # history.save()
     context = {}
     if request.method == 'POST':
         if 'password' in request.POST:
@@ -40,27 +31,6 @@ def home_view(request):
             history.assigned_user = user
             history.save()
             login(request, user)
-            return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+            return HttpResponseRedirect(reverse('polls:intro'))
     return render(request, 'home.html', context=context)
 
-
-def login_view(request):
-    # form = LoginForm(request.POST or None)
-    # context = {"form": form}
-    # print(request.user.is_authenticated)
-    if request.method == 'POST':
-        # print(User.objects.all().filter(username='user').exists())
-        # print(request.POST.get('password'))
-        # user = authenticate(request, username='user',
-        #                     password=request.POST.get('password'))
-        user = User.objects.all().filter(password=request.POST.get('password')).first()
-        if user is not None:
-            print("Logged in")
-            login(request, user)
-            # context["form"] = LoginForm()  # zeby wyczyscilo dane
-            redirect("/")
-            # return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
-        else:
-            print("error")
-
-    return render(request, "login.html")

@@ -28,8 +28,8 @@ def question_view(request, pk=None):
         if request.method == 'POST':
             if numerical:
                 value = request.POST.get('value')
-                question.numerical_value = value
-                question.save()
+                # question.numerical_value = value
+                # question.save()
                 answers_history = f'{answers_history}||{value}'
                 history_instance.questions_all = questions_history
                 history_instance.answers_all = answers_history
@@ -75,3 +75,12 @@ def output_view(request):
         else:
             context['message'] = 'Brak danych przypisanych do danego kodu'
     return render(request, 'output.html', context)
+
+
+def intro_view(request):
+    context = {}
+    context['code'] = request.user.username
+    if request.method == 'POST':
+        return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+    else:
+        return render(request, 'intro.html', context)

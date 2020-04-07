@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dziennik COVID-19</title>
+    <link rel="icon" href="{% static "img/favicon.png"%}">
+    <!-- Bootstrap CSS -->
+    {% include 'css.html' %}
+</head>
+
+<body>
+    <!--::header part start::-->
+    {% include 'navbar.html' %}
+    <!-- Header part end-->
+
+    <!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                             <h1>Zapisz swój kod</h1>
+
+                                <br>
+
+                                Dziękujemy za wzięcie udziału w zbieraniu informacji o COVID-19. Na kolejnych ekranach będą pojawiać się pytania odnośnie Twojego samopoczucia. Prosimy o odpowiedzi zgodne z prawdą i nie wprowadzanie fałszywych danych celem nie zaburzania statystyk. Pomoże to także Tobie śledzić swój stan zdrowia.
+								Bardzo ważne jest aby zapisać swój kod:  <p> <font size="6">{{ code }}</font> </p>
+                                <b><font size="4">Zapisz swój kod</font></b>, będziemy mogli wtedy pokazać Ci historię Twojej choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej zrozumieniu. Pamiętaj, że całość procesu jest anonimowa a dane zbierane są w celach statystycznych! Dlatego bez kodu historia Twojej choroby zacznie się od nowa.
+
+ </p>
+ 							 <form method="post">
+                                {% csrf_token %}
+                                <input class="btn_2" type="submit" value="start" />
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!--::doctor_part start::-->
+    <section class="doctor_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <h2> Pomocne linki</h2>
+                        <p>Informacje oraz pomoc w przypadku złego samopoczucia znajdziesz na poniższych stronach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <a href="https://www.gov.pl/web/koronawirus/teleporady---rejestr-placowek-podstawowej-opieki-zdrowotnej-poz"> <img src="{% static 'img/gov.PNG'%}" alt="doctor"></a>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <a href="https://www.gov.pl/web/koronawirus/teleporady---rejestr-placowek-podstawowej-opieki-zdrowotnej-poz"><h3>Teleporady</h3></a>
+                                <p>Rejestr placówek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <a href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa"> <img src="{% static 'img/gov.PNG'%}" alt="doctor"></a>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <a href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa"><h3>Koronawirus</h3></a>
+                                <a href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa"><p>Podejrzewasz u siebie koronawirusa?</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                               <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"> <img src="{% static 'img/map.PNG'%}" alt="doctor"></a>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"> <h3>Mapa zarażeń</h3></a>
+                                <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"> <p>Dane z Ministerstwa Zdrowia</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow"> <img src="{% static 'img/rzad.PNG'%}" alt="doctor"></a>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow"> <h3>Aktualności</h3></a>
+                                <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow"> <p>Działania rządu</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-area">
+ <div class="copyright_part">
+            <div class="container">
+                <div class="row align-items-center">
+                    <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+{% include 'js.html' %}
+</body>
+
+</html>
