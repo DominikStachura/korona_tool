@@ -104,7 +104,10 @@
                                 <b><font size="4">Zapisz swój kod</font></b>, będziemy mogli wtedy pokazać Ci historię Twojej choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej zrozumieniu. Pamiętaj, że całość procesu jest anonimowa a dane zbierane są w celach statystycznych! Dlatego bez kodu historia Twojej choroby zacznie się od nowa.
 
  </p>
- 							 <a href=# class="btn_2">Zapisałem swój kod</a>
+ 							 <form method="post">
+                                {% csrf_token %}
+                                <input class="btn_2" type="submit" value="start" />
+                            </form>
 
                             </div>
                         </div>

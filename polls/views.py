@@ -27,7 +27,11 @@ from django.http import HttpResponse
 #
 #         return instance
 def intro_view(request):
-    pass
+    if request.method == 'POST':
+        return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+    else:
+        return render(request, 'intro.html')
+
 
 def question_view(request, pk=None):
     if not request.user.is_authenticated:
