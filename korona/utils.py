@@ -1,7 +1,10 @@
 import random
 import string
-from winreg import *
+import os
+
 from django.contrib.auth.models import User
+from django.http import HttpResponse
+
 
 
 def random_string_generator(size=5, chars=string.digits):
@@ -16,7 +19,3 @@ def unique_code_generator():
     return new_code
 
 
-def get_download_path():
-    with OpenKey(HKEY_CURRENT_USER, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders') as key:
-        Downloads = QueryValueEx(key, '{374DE290-123F-4565-9164-39C4925E467B}')[0]
-    return Downloads

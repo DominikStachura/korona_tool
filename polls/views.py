@@ -2,12 +2,15 @@ from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.detail import DetailView
-from korona.utils import get_download_path
 import csv
 import xlsxwriter
+import os
+import io
 
 from .models import Question, History
 from django.urls import reverse
+from django.http import HttpResponse
+
 
 
 # class QuestionDetailView(DetailView):
@@ -23,6 +26,8 @@ from django.urls import reverse
 #
 #
 #         return instance
+def intro_view(request):
+    pass
 
 def question_view(request, pk=None):
     if not request.user.is_authenticated:
@@ -83,8 +88,8 @@ def output_view(request):
         code = request.POST.get('code')
         history = History.objects.all().filter(code=code)
         if history.exists():
-            download_path = get_download_path()
-            workbook = xlsxwriter.Workbook(f'{download_path}/output.xlsx')
+            path = 'outputs/output'+code+'.xlsx'
+            workbook = xlsxwriter.Workbook(path)
             for index, history_instance in enumerate(history):
                 # history_instance = history.first()
                 if history_instance.answers_all is not None:
@@ -103,9 +108,16 @@ def output_view(request):
             workbook.close()
 
 
+            if os.path.exists(path):
+                with open(path, "rb") as excel:
+                    data = excel.read()
 
-
-            context['message'] = "Zapisano dane to folderu 'pobrane' "
+            response = HttpResponse(data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            response['Content-Disposition'] = 'attachment; filename="output'+code+'.xlsx"'
+            if os.path.isfile('outputs/output'+code+'.xlsx'):
+                os.remove('outputs/output'+code+'.xlsx')
+            return response
         else:
             context['message'] = 'Brak danych przypisanych do danego kodu'
     return render(request, 'output.html', context)
+

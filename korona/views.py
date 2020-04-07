@@ -40,7 +40,7 @@ def home_view(request):
             history.assigned_user = user
             history.save()
             login(request, user)
-            return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
+            return HttpResponseRedirect(reverse('polls:intro'))
     return render(request, 'home.html', context=context)
 
 
