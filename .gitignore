@@ -5,3 +5,5 @@ db.sqlite3
 *.pyc
 *.xml
 **/__pycache__/
+*.idea/*
+*/__pycache__/*
