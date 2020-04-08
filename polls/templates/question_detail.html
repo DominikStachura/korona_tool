@@ -46,7 +46,7 @@
         {% else %}
                 <form method="post">
                     {% csrf_token %}
-                    <input type="number" pattern="[0-9]+([\.,][0-9]+)?" name="value" step="0.01" min="0" max="40">
+                    <input type="number" pattern="[0-9]+([\.,][0-9]+)?" name="value" step="0.01" min="0" max="40" required>
                     <input type="submit" value="Odpowiedz">
                    <div class="modal-footer text-muted">
                     <span id="answer"></span>
