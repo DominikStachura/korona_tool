@@ -1643,24 +1643,25 @@ ul {
   color: #999999;
 }
 
-a#zaloguj {
+
+form#mobile_login {
     display: none;
 }
 
 @media (max-width: 991px) {
-  a#zaloguj {
-    display: flex;
-    padding-right: 0px;
-    margin-top: 0px;
-    padding-left: 0px;
-  }
+
   .main_menu .btn_1 {
     padding: 5px 5px!important;
     margin-left: 0!important;
+        margin-top: auto;
 }
   span.navbar-toggler-icon {
-    margin-left: 25vw;
+    margin-left: 0vw;
 }
+form#mobile_login {
+    display: flex;
+}
+
 
 
 }
