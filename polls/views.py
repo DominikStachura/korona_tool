@@ -22,7 +22,8 @@ def question_view(request, pk=None):
         if len(list(question.choice_set.all())) == 0:
             numerical = True
         context = {'question': question,
-                   'numerical': numerical}
+                   'numerical': numerical,
+                   'code': request.user.username}
 
         questions_history = f'{questions_history}||{question.question_text}'
         if request.method == 'POST':
@@ -36,7 +37,6 @@ def question_view(request, pk=None):
                 history_instance.save()
                 if question.next_question is None:
                     # return HttpResponseRedirect(reverse('polls:final'))
-                    context['code'] = request.user.username
                     logout(request)
                     return render(request, 'final.html', context)
                 else:
@@ -55,7 +55,6 @@ def question_view(request, pk=None):
                 else:
                     logout(request)
                     # return HttpResponseRedirect(reverse('polls:final'))
-                    context['code'] = request.user.username
                     return render(request, 'final.html', context)
 
         return render(request, 'question_detail.html', context)

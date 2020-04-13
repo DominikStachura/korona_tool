@@ -18,11 +18,14 @@ from django.urls import path
 
 from django.contrib import admin
 from django.urls import include, path
-from .views import home_view
+from django.views.generic import TemplateView
+
+from .views import home_view, intro_login_view
 
 app_name = 'korona'
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
+    path('intro_login', intro_login_view, name='intro_login'),
 ]

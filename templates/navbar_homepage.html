@@ -23,48 +23,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}">Kontakt</a>
+                                <a class="nav-link" href="#kontakt">Kontakt</a>
                             </li>
-                            <li class="d-none d-lg-block">
 
-
-                                <form method="post">
-                                    {% csrf_token %}
-                                    <input type="number" name="password" min="0" max="99999" required>
-                                    <style>/* Chrome, Safari, Edge, Opera */
-                                    input::-webkit-outer-spin-button,
-                                    input::-webkit-inner-spin-button {
-                                        -webkit-appearance: none;
-                                        margin: 0;
-                                    }
-
-                                    /* Firefox */
-                                    input[type=number] {
-                                        -moz-appearance: textfield;
-                                    }</style>
-                                    <input type="submit" value="Zaloguj">
-                                </form>
-
-                                {{ message }}
-                            </li>
                         </ul>
                     </div>
-                    <form method="post" id="mobile_login">
-                                    {% csrf_token %}
-                                    <input type="number" name="password" min="0" max="99999" required>
-                                    <style>/* Chrome, Safari, Edge, Opera */
-                                    input::-webkit-outer-spin-button,
-                                    input::-webkit-inner-spin-button {
-                                        -webkit-appearance: none;
-                                        margin: 0;
-                                    }
-
-                                    /* Firefox */
-                                    input[type=number] {
-                                        -moz-appearance: textfield;
-                                    }</style>
-                                    <input type="submit" class="btn_1" id="zaloguj" value="Zaloguj">
-                    </form>
                 </nav>
             </div>
         </div>

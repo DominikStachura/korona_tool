@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dziennik COVID-19</title>
-    <link rel="icon" href="{% static "img/favicon.png"%}">
+    <link rel="icon" href="{% static "img/favicon.png" %}">
     <!-- Bootstrap CSS -->
     {% include 'css.html' %}
 </head>
@@ -24,19 +24,31 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                             <h1>Zapisz swój kod</h1>
+                             <h1>Podaj swój kod</h1>
+                            <p>Wpisując kod pozwolisz nam na pokazanie Ci historii Twojej
+                        choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej
+                        zrozumieniu.
+                        <b>Pamiętaj, że całość procesu jest anonimowa, a dane zbierane są w celach statystycznych!</b>
+                        Dlatego bez kodu historia Twojej choroby zacznie się od nowa.</p>
 
-                                <br>
+                                    <form method="post">
+                                    {% csrf_token %}
+                                    <input type="number" name="password" min="0" max="99999" required>
+                                    <style>/* Chrome, Safari, Edge, Opera */
+                                    input::-webkit-outer-spin-button,
+                                    input::-webkit-inner-spin-button {
+                                        -webkit-appearance: none;
+                                        margin: 0;
+                                    }
 
-                                Dziękujemy za wzięcie udziału w zbieraniu informacji o COVID-19. Na kolejnych ekranach będą pojawiać się pytania odnośnie Twojego samopoczucia. Prosimy o odpowiedzi zgodne z prawdą i nie wprowadzanie fałszywych danych celem nie zaburzania statystyk. Pomoże to także Tobie śledzić swój stan zdrowia.
-								Bardzo ważne jest aby zapisać swój kod:  <p> <font size="6">{{ code }}</font> </p>
-                                <b><font size="4">Zapisz swój kod</font></b>, będziemy mogli wtedy pokazać Ci historię Twojej choroby, a dane zdobyte w ten sposób pozwolą nam śledzić przebieg choroby i pomóc w lepszym jej zrozumieniu. Pamiętaj, że całość procesu jest anonimowa a dane zbierane są w celach statystycznych! Dlatego bez kodu historia Twojej choroby zacznie się od nowa.
+                                    /* Firefox */
+                                    input[type=number] {
+                                        -moz-appearance: textfield;
+                                    }</style>
+                                    <input type="submit" class="btn_1" value="Przejdź do pytań">
+                                </form>
 
- </p>
- 							 <form method="post">
-                                {% csrf_token %}
-                                <input class="btn_2" type="submit" value="Zapisałem swój kod" />
-                            </form>
+                                {{ message }}
 
                             </div>
                         </div>
@@ -64,7 +76,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <a href="https://www.gov.pl/web/koronawirus/teleporady---rejestr-placowek-podstawowej-opieki-zdrowotnej-poz"> <img src="{% static 'img/gov.PNG'%}" alt="doctor"></a>
+                            <a href="https://www.gov.pl/web/koronawirus/teleporady---rejestr-placowek-podstawowej-opieki-zdrowotnej-poz"> <img src="{% static 'img/gov.PNG' %}" alt="doctor"></a>
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
@@ -77,7 +89,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <a href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa"> <img src="{% static 'img/gov.PNG'%}" alt="doctor"></a>
+                            <a href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa"> <img src="{% static 'img/gov.PNG' %}" alt="doctor"></a>
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
@@ -90,7 +102,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                               <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"> <img src="{% static 'img/map.PNG'%}" alt="doctor"></a>
+                               <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"> <img src="{% static 'img/map.PNG' %}" alt="doctor"></a>
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
@@ -103,7 +115,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow"> <img src="{% static 'img/rzad.PNG'%}" alt="doctor"></a>
+                            <a href="https://www.gov.pl/web/koronawirus/komunikaty-resortow"> <img src="{% static 'img/rzad.PNG' %}" alt="doctor"></a>
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
