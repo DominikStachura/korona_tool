@@ -16,10 +16,10 @@ class OrderInline(admin.TabularInline):
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['question_text', 'next_question', 'numerical_value']}),
+        (None, {'fields': ['question_text', 'next_question']}),
     ]
     inlines = [ChoiceInline]
-    list_display = ['question_text', 'next_question', 'numerical_value']
+    list_display = ['question_text', 'next_question']
     search_fields = ['question_text']
 
     class Meta:

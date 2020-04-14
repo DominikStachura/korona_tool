@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    numerical_value = models.FloatField(null=True, blank=True)
     next_question = models.ForeignKey("self", on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
