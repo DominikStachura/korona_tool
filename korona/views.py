@@ -48,6 +48,7 @@ def intro_login_view(request):
                 history = History(code=password)
                 history.assigned_user = user
                 history.save()
+                request.session['urls_history'] = [request.path]
                 return HttpResponseRedirect(reverse('polls:question-detail', args=(3,)))
             else:
                 context['message'] = 'Brak danych przypisanych do kodu'

@@ -7,6 +7,13 @@ from django.urls import reverse
 from korona.utils import create_spreadsheet_data
 from .models import Question, History
 
+def update_session(request):
+    url_list = request.session.get('urls_history')
+    if url_list is None:
+        request.session['urls_history'] = request.path
+    else:
+        url_list.append(request.path)
+        request.session['urls_history'] = url_list
 
 def question_view(request, pk=None):
     if not request.user.is_authenticated:
@@ -30,9 +37,7 @@ def question_view(request, pk=None):
 
         questions_history = f'{questions_history}||{question.question_text}'
         if request.method == 'POST':
-            url_list = request.session['urls_history']
-            url_list.append(request.path)
-            request.session['urls_history'] = url_list
+            update_session(request)
 
             if numerical:
                 value = request.POST.get('value')
@@ -96,7 +101,7 @@ def intro_view(request):
 def return_view(request):
     urls = request.session['urls_history']
     prev_url = urls[-1]
-    if prev_url.split('/')[-1] == 'intro':
+    if 'intro' in prev_url.split('/')[-1]:
         return redirect(request.META.get('HTTP_REFERER'))
 
     history_instance = History.objects.all().filter(assigned_user=request.user).order_by('-id')[0]
